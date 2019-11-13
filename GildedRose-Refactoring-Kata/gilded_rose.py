@@ -1,15 +1,3 @@
-import sys
-
-class Item:
-    def __init__(self, name, sell_in, quality):
-        self.name = name
-        self.sell_in = sell_in
-        self.quality = quality
-
-    def __repr__(self):
-        return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
-
-
 class GildedRose(object):
 
     def __init__(self, items):
@@ -17,7 +5,6 @@ class GildedRose(object):
 
     def update_quality(self):
         for item in self.items:
-
             if item.quality < 0 or item.quality > 50:
                 raise ValueError(item.name + str(item.quality) + "Item quality must be in a range beetween 0 and 50!")
 
@@ -36,7 +23,6 @@ class GildedRose(object):
         else:
             self.update_quality_of_normal_item(item)
 
-    # TODO refactor this function
     def update_quality_of_backstage_passes(self, item):
         print(item.sell_in)
         if item.quality > 50:
@@ -72,4 +58,3 @@ class GildedRose(object):
             item.quality -= 1
         else:
             item.quality -= 2
-

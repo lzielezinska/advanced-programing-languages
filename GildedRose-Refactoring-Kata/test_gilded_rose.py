@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from gilded_rose import Item, GildedRose
+from gilded_rose import GildedRose
+from item import Item
 
 class GildedRoseTest(unittest.TestCase):
-    def test_foo(self):
-        items = [Item("foo", 0, 0)]
-        gilded_rose = GildedRose(items)
-        gilded_rose.update_quality()
-        self.assertEquals("foo", items[0].name)
  
     def test_if_bree_is_updated_properly(self):
         items = [Item("Aged Brie", 20, 20)]
@@ -51,6 +47,12 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEquals(28, items[0].quality)
+
+    def test_if_conjured_item_is_updated_properly_when_quality_equas_1(self):
+        items = [Item("Conjured Mana Cake", 2, 1)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEquals(1, items[0].quality)
     
     def test_if_normal_item_is_updated_properly(self):
         items = [Item("Elixir of the Mongoose", 10, 30)]
