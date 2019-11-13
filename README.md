@@ -58,4 +58,5 @@ def update_quality_of_conjured_item(self, item):
 Jak widać na powyższym przykładzie w każdej metodzie przed dokonaniem aktualizacji sprawdzam czy nie spowoduje ona nadaniu item.quality nieodpowiedniej wartości.
 
 ### Podsumowanie refactoryzacji
+![Postęp w refactoryzacji](refactor_statistic.png)
 
