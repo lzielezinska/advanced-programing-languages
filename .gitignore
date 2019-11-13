@@ -5,3 +5,4 @@ obj
 vendor
 __pycache__
 special_items/
+node_modules/

@@ -8,9 +8,9 @@ class GildedRose(object):
             if item.quality < 0 or item.quality > 50:
                 raise ValueError(item.name + str(item.quality) + "Item quality must be in a range beetween 0 and 50!")
 
-            item.sell_in -=1 
+            item.sell_in -= 1 
             self.update_quality_of_specialized_item(item)
-    
+
     def update_quality_of_specialized_item(self, item):
         if item.name == "Backstage passes to a TAFKAL80ETC concert":
             self.update_quality_of_backstage_passes(item)
@@ -41,10 +41,10 @@ class GildedRose(object):
             pass
         else:
             item.quality += 1
-    
+
     def update_quality_of_conjured_item(self, item):
-        if item.quality < 2:
-            pass
+        if item.quality <= 2:
+            item.quality == 0
         else:
             item.quality -= 2
 
