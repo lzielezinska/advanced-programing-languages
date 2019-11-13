@@ -4,3 +4,4 @@ obj
 .vs
 vendor
 __pycache__
+special_items/
