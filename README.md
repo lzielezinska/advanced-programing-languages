@@ -109,7 +109,7 @@ Jak widać na powyższym przykładzie w każdej metodzie przed dokonaniem aktual
 ### Podsumowanie refactoryzacji
 Do poprawiania kodu użyłam dwóch narzędzi, których zadaniem było wykrywanie błędów oraz proponowanie odpowiedniego rozwiązania.
 Codacy jest paltformą używaną w procesie ciągłej integracji. Po każdym upublicznionym komicie sprawdza ono kod, znajduje błędów i na ich podstawie wylicza procentową wartość zawartych w programie pomyłek. Na poniższym wykresie przedstawiono jak wskażnik ten zmniejszał się wraz z procesem refaktoryzacji.
-![Postęp w refactoryzacji](images/refactor_statistic.png)
+![Postęp w refactoryzacji](refactor_statistic.png)
 Ponieważ codacy nie dzieli błędów na kategorie zastosowałam kolejne narzędzie - 'pylint'. Po sprawdzeniu pylintem pierwszej wersji klasy `gilded_rose.py`
 otrzymałam taki wynik:
 ```
