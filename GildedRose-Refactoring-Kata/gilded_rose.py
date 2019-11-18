@@ -9,21 +9,23 @@ class GildedRose(object):
                 raise ValueError(item.name + str(item.quality) + "Item quality must be in a range beetween 0 and 50!")
 
             item.sell_in -= 1 
-            self.update_quality_of_specialized_item(item)
+            GildedRose.update_quality_of_specialized_item(item)
 
-    def update_quality_of_specialized_item(self, item):
+    @classmethod
+    def update_quality_of_specialized_item(cls, item):
         if item.name == "Backstage passes to a TAFKAL80ETC concert":
-            self.update_quality_of_backstage_passes(item)
+            GildedRose.update_quality_of_backstage_passes(item)
         elif item.name == "Aged Brie":
-            self.update_quality_of_aged_bree(item)
+            GildedRose.update_quality_of_aged_bree(item)
         elif item.name == "Sulfuras, Hand of Ragnaros":
-            self.update_quality_of_sulfurus(item)
+            GildedRose.update_quality_of_sulfurus(item)
         elif item.name == "Conjured Mana Cake":
-            self.update_quality_of_conjured_item(item)
+            GildedRose.update_quality_of_conjured_item(item)
         else:
-            self.update_quality_of_normal_item(item)
+            GildedRose.update_quality_of_normal_item(item)
 
-    def update_quality_of_backstage_passes(self, item):
+    @classmethod
+    def update_quality_of_backstage_passes(cls, item):
         print(item.sell_in)
         if item.quality > 50:
             pass
@@ -36,22 +38,26 @@ class GildedRose(object):
         elif item.sell_in <= 0:
             item.quality = 0
 
-    def update_quality_of_aged_bree(self, item):
+    @classmethod
+    def update_quality_of_aged_bree(cls, item):
         if item.quality >= 50:
             pass
         else:
             item.quality += 1
 
-    def update_quality_of_conjured_item(self, item):
+    @classmethod
+    def update_quality_of_conjured_item(cls, item):
         if item.quality <= 2:
             item.quality == 0
         else:
             item.quality -= 2
 
-    def update_quality_of_sulfurus(self, item):
+    @classmethod
+    def update_quality_of_sulfurus(cls, item):
         pass
 
-    def update_quality_of_normal_item(self, item):
+    @classmethod
+    def update_quality_of_normal_item(cls, item):
         if item.quality < 1:
             pass
         elif item.sell_in > 0:
