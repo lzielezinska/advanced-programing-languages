@@ -1,4 +1,4 @@
-class GildedRose(object):
+class GildedRose():
 
     def __init__(self, items):
         self.items = items
@@ -6,9 +6,10 @@ class GildedRose(object):
     def update_quality(self):
         for item in self.items:
             if item.quality < 0 or item.quality > 50:
-                raise ValueError(item.name + str(item.quality) + "Item quality must be in a range beetween 0 and 50!")
+                raise ValueError(item.name + str(item.quality) + \
+                    "Item quality must be in a range beetween 0 and 50!")
 
-            item.sell_in -= 1 
+            item.sell_in -= 1
             GildedRose.update_quality_of_specialized_item(item)
 
     @classmethod
@@ -29,11 +30,12 @@ class GildedRose(object):
         print(item.sell_in)
         if item.quality > 50:
             pass
-        elif (item.sell_in > 9) or (item.sell_in in range(5,10) and item.quality == 49 ):
+        elif (item.sell_in > 9) or (item.sell_in in range(5, 10) and item.quality == 49):
             item.quality += 1
-        elif (item.sell_in in range(5,10) and item.quality < 49) or (item.sell_in in range(1,5) and item.quality == 48):
+        elif (item.sell_in in range(5, 10) and item.quality < 49) or \
+            (item.sell_in in range(1, 5) and item.quality == 48):
             item.quality += 2
-        elif ((item.sell_in in range(1,5)) and (item.quality < 48)):
+        elif ((item.sell_in in range(1, 5)) and (item.quality < 48)):
             item.quality += 3
         elif item.sell_in <= 0:
             item.quality = 0
